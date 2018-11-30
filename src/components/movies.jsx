@@ -6,6 +6,7 @@ import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
 import { getGenres } from "../services/fakeGenreService";
 import MoviesTable from "./moviesTable";
+import { Link } from "react-router-dom";
 
 class Movies extends Component {
   state = {
@@ -84,7 +85,10 @@ class Movies extends Component {
           />
         </div>
         <div className="col">
-          <p>Showing {totalCount} movies in the database</p>
+          <Link to="/movies/new">
+            <button className="btn btn-primary">New Movie</button>
+          </Link>
+          <p className="mt-3">Showing {totalCount} movies in the database</p>
           <MoviesTable
             movies={movies}
             sortColumn={sortColumn}
