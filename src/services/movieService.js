@@ -12,3 +12,13 @@ export function getMovie(id) {
 export function deleteMovie(movieId) {
   http.delete(`${apiUrl}/movies/${movieId}`);
 }
+
+export async function saveMovie(movie) {
+  if (movie._id) {
+    const body = { ...movie };
+    delete body._id;
+    return http.put(`${apiUrl}/movies/${movie._id}`, body);
+  }
+
+  return http.post(`${apiUrl}/movies`, movie);
+}
