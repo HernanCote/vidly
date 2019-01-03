@@ -1,4 +1,3 @@
 {
-  "apiUrl": "http://localhost:5000/api",
-  "ravenUrl": "your raven url here"
+  "ravenUrl": "raven url here"
 }
